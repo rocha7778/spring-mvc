@@ -1,0 +1,29 @@
+package com.packt.webstore.service.imp;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.packt.webstore.domain.Customer;
+import com.packt.webstore.domain.repository.CustomerRepository;
+import com.packt.webstore.service.CustomerService;
+
+@Service
+public class CustomerServiceImpl implements CustomerService{
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	@Override
+	public List<Customer> getAllCusfomerInfo() {
+		List<Customer> result = customerRepository.getAllCusfomerInfo();
+		return result;
+	}
+
+	@Override
+	public void addCustomer(Customer newCustomer) {
+		customerRepository.addCustomer(newCustomer);
+	}
+
+}
