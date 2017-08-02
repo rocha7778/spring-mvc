@@ -43,6 +43,7 @@ import com.packt.webstore.interceptor.PromoCodeInterceptor;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.packt.webstore")
+@ComponentScan("com.packt.webstore.validator")
 public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 
 	@Override
