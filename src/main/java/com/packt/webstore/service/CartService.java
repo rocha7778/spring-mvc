@@ -10,4 +10,6 @@ public interface CartService {
    public void delete(String id);
    public void addItem(String cartId, String productId);
    public void removeItem(String cartId, String productId);
+   public Cart validate(String cartId);
+   public void clearCart(String cartId);
 }

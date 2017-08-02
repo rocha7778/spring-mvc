@@ -1,5 +1,6 @@
 package com.packt.webstore.domain.repository.impl;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -31,10 +32,8 @@ public class InMemoryCustomerRepositoryImpl implements CustomerRepository {
 	private static final class CustomerMapper implements RowMapper<Customer> {
 		public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Customer customer = new Customer();
-			customer.setId(rs.getBigDecimal("ID"));
+			customer.setCustomerId(new BigDecimal(rs.getBigDecimal("ID").toString()).longValue());
 			customer.setName(rs.getString("NAME"));
-			customer.setAddres(rs.getString("ADDRES"));
-			customer.setNoOfOrdersMade(rs.getBigDecimal("NO_ORDER_MADE"));
 			return customer;
 		}
 	}
@@ -49,9 +48,8 @@ public class InMemoryCustomerRepositoryImpl implements CustomerRepository {
 	               + "VALUES (:id, :name, :addres)";  
 	         
 	         Map<String, Object> params = new HashMap<>();
-	         params.put("id", newCustomer.getId());  
+	         params.put("id", newCustomer.getCustomerId());  
 	         params.put("name", newCustomer.getName());  
-	         params.put("addres", newCustomer.getAddres());  
 	        
 	         jdbcTemplate.update(SQL, params);     
 

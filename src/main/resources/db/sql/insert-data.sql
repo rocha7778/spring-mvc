@@ -17,8 +17,5 @@ INSERT INTO PRODUCTS VALUES ('P1236',
 							'New',1000,0,false);
 					  
 					 
-INSERT INTO CUSTOMER VALUES (1, 'Rocha','Medellin',10);
-INSERT INTO CUSTOMER VALUES (2, 'Salamanca','Medellin',23);
-INSERT INTO CUSTOMER VALUES (3, 'Alexis','Medellin',40);
 
 
