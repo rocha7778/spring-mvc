@@ -10,9 +10,9 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.packt.webstore.domain.Countries;
 import com.packt.webstore.domain.repository.ContactDAO;
 import com.packt.webstore.dto.Contact;
-import com.packt.webstore.dto.Countries;
 
 public class ContactDAOImpl  implements ContactDAO{
 	
@@ -24,6 +24,7 @@ public class ContactDAOImpl  implements ContactDAO{
 	 
 	 public ContactDAOImpl() {
 		   
+		 
 		}
 	 
 	 

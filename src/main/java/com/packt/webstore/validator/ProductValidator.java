@@ -12,7 +12,7 @@ import org.springframework.validation.Validator;
 
 import com.packt.webstore.domain.Product;
 
-//@Component
+@Component
 public class ProductValidator implements Validator{
 
    @Autowired

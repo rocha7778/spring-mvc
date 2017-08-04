@@ -38,12 +38,12 @@ import org.springframework.web.util.UrlPathHelper;
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ContactDAO;
 import com.packt.webstore.domain.repository.impl.ContactDAOImpl;
+import com.packt.webstore.domain.repository.impl.CountriesRepositoryImpl;
 import com.packt.webstore.interceptor.PromoCodeInterceptor;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.packt.webstore")
-@ComponentScan("com.packt.webstore.validator")
 public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 
 	@Override
@@ -170,13 +170,18 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
         dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
         dataSource.setUsername("HR");
         dataSource.setPassword("123456");
-         
         return dataSource;
     }
 	
 	@Bean
 	public ContactDAO getContactDAO(){
 		return new ContactDAOImpl(getDataSource());
+		
+	}
+	
+	@Bean
+	public CountriesRepositoryImpl getContriesDataSource(){
+		return new CountriesRepositoryImpl(getDataSource());
 		
 	}
 

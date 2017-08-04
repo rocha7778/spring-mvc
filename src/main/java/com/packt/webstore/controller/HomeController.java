@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.packt.webstore.domain.Countries;
 import com.packt.webstore.domain.repository.ContactDAO;
-import com.packt.webstore.dto.Countries;
 
 @Controller
 public class HomeController {

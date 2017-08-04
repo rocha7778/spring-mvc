@@ -2,8 +2,8 @@ package com.packt.webstore.domain.repository;
 
 import java.util.List;
 
+import com.packt.webstore.domain.Countries;
 import com.packt.webstore.dto.Contact;
-import com.packt.webstore.dto.Countries;
 
 public interface ContactDAO {
 	

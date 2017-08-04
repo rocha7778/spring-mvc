@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -25,7 +28,7 @@ public class InMemoryCartRepository implements CartRepository {
 
 	@Autowired
 	private ProductService productService;
-
+	
 	public void create(CartDto cartDto) {
 
 		String INSERT_CART_SQL = "INSERT INTO CART(ID) VALUES (:id)";

@@ -1,9 +1,10 @@
-package com.packt.webstore.dto;
+package com.packt.webstore.domain;
 
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
-
+import javax.persistence.Entity;
+import javax.persistence.Table;
 public class Countries {
 	
 	@Column(name = "COUNTRY_ID")
