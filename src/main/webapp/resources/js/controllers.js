@@ -1,7 +1,29 @@
 var cartApp = angular.module('cartApp', []);
+
+
+cartApp.directive("addToCart",['$http',function($http){
+	
+	return function($scope,element,attrs,$http){
+			element.bind("click",function(data){
+				var productId = document.getElementById('idProducto');
+				
+				$scope.addToCart(productId.value);
+				
+				
+				
+			});
+		
+	}
+	
+	
+}]);
 													 
 
 cartApp.controller('cartCtrl', function($scope, $http) {
+	
+	document.querySelector("#miClick").addEventListener("click",function(){
+		alert("hola");
+});
 
 	$scope.refreshCart = function(cartId) {
         $http.get('/webstore/rest/cart/' + $scope.cartId)

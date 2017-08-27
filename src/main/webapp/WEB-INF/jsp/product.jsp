@@ -54,6 +54,13 @@
 					<a href="<spring:url value="/cart"/>" class="btn btn-default">
 						<span class="glyphicon-hand-right glyphicon"></span> View Cart
 					</a>
+					
+					
+					<a  id ="miClick" class="btn btn-warning btn-large" add-to-cart> <span
+						class="glyphicon-shopping-cart glyphicon"></span> ejemplo event
+						
+						<input type="hidden" id="idProducto" value="${product.productId}"/>
+					</a> 
 
 				</p>
 				
