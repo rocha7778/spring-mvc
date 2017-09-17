@@ -169,7 +169,7 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
         dataSource.setUsername("HR");
-        dataSource.setPassword("ABCD123");
+        dataSource.setPassword("123456");
         return dataSource;
     }
 	
