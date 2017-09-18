@@ -1,12 +1,15 @@
 package com.packt.webstore.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.packt.webstore.domain.Countries;
@@ -40,6 +43,18 @@ public class HomeController {
 	    model.setViewName("homeHola");
 	 
 	    return model;
+	}
+	
+	@RequestMapping(value="/miJson")
+	public  @ResponseBody Countries miJson(@RequestBody Countries c) throws IOException{
+	   System.out.println(c.getCountryName());
+	   
+	   Countries countries = new Countries();
+	   countries.setCountryId("id_rocha");
+	   countries.setCountryName("name_rocha");
+	   countries.setRegionId(new BigDecimal(1));
+	 
+	    return countries;
 	}
 
 }
